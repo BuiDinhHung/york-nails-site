@@ -330,8 +330,10 @@ body.menu-open { overflow: hidden; }
 .review__text { margin: 0 0 1rem; flex: 1; }
 .review__text p { margin: 0; }
 .review__name { margin: 0; font-weight: 500; }
-.review--sample { position: relative; }
-.review--sample .sample-tag { position: absolute; top: 1rem; right: 1rem; margin: 0; }
+.review__meta { margin: .2rem 0 0; font-size: .9375rem; color: var(--ink-soft); }
+.review--more { justify-content: center; align-items: flex-start; background: transparent; border-style: dashed; border-color: var(--gold-line); }
+.review__more-title { font-family: var(--serif); font-size: 1.625rem; line-height: 1.2; margin: 0 0 .5rem; }
+.review--more .btn { margin-top: .75rem; }
 
 /* ---------- Services carousel ---------- */
 
