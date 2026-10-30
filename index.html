@@ -142,16 +142,33 @@
          If the salon gains genuine press coverage, this can become "As seen in"
          with the publications' names or logos. -->
     <section class="press" aria-labelledby="press-title">
-      <div class="container">
+      <div class="press__inner">
         <h2 class="press__title" id="press-title">Specialists in</h2>
-        <ul class="press__list" role="list">
-          <li class="press__item">BIAB</li>
-          <li class="press__item">Shellac</li>
-          <li class="press__item">Acrylic</li>
-          <li class="press__item">Gel Powder</li>
-          <li class="press__item">SNS</li>
-          <li class="press__item">Nail Art</li>
-        </ul>
+        <div class="marquee">
+          <div class="marquee__track">
+            <ul class="press__list" role="list">
+            <li class="press__item">BIAB</li>
+            <li class="press__item">Shellac</li>
+            <li class="press__item">Acrylic</li>
+            <li class="press__item">Gel Powder</li>
+            <li class="press__item">SNS</li>
+            <li class="press__item">Nail Art</li>
+            <li class="press__item">Manicure</li>
+            <li class="press__item">Pedicure</li>
+            </ul>
+            <!-- duplicate for a seamless loop; hidden from screen readers -->
+            <ul class="press__list" role="list" aria-hidden="true">
+            <li class="press__item">BIAB</li>
+            <li class="press__item">Shellac</li>
+            <li class="press__item">Acrylic</li>
+            <li class="press__item">Gel Powder</li>
+            <li class="press__item">SNS</li>
+            <li class="press__item">Nail Art</li>
+            <li class="press__item">Manicure</li>
+            <li class="press__item">Pedicure</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
