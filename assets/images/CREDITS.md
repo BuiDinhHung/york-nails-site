@@ -5,7 +5,7 @@ https://www.pexels.com/license/ — replace with the salon's own photos when ava
 
 | File | Source | Description |
 |---|---|---|
-| hero.jpg | https://www.pexels.com/photo/7446914/ | Close-up of a professional manicure session with tools and black gloves in a modern salon. |
+| hero.jpg | https://www.pexels.com/photo/3997384/ | Professional hand treatment features a stylish red manicure at a modern nail salon. |
 | service-manicure-pedicure.jpg | https://www.pexels.com/photo/4677845/ | Close-up of a manicurist applying nail polish during a professional manicure session. |
 | service-biab-shellac.jpg | https://www.pexels.com/photo/3997382/ | Close-up of a professional manicure session using gel polish with red nails. |
 | service-extensions.jpg | https://www.pexels.com/photo/34997574/ | Close-up of a hand with French manicure and gold rings on blue background. |
@@ -14,7 +14,7 @@ https://www.pexels.com/license/ — replace with the salon's own photos when ava
 | about.jpg | https://www.pexels.com/photo/34930135/ | A woman receives a relaxing pedicure treatment at a salon, focusing on foot care and relaxation. |
 | gallery-1.jpg | https://www.pexels.com/photo/34373400/ | Close-up of a well-manicured hand adorned with gold rings against a soft white background. |
 | gallery-2.jpg | https://www.pexels.com/photo/34997566/ | Graceful, manicured hand with elegant jewelry, showcasing stylish nails against a dark backdrop. |
-| gallery-3.jpg | https://www.pexels.com/photo/3997381/ | Close-up of red manicured nails during a salon session with nail tools. |
+| gallery-3.jpg | https://www.pexels.com/photo/34997575/ | Close-up of a hand with French manicure adorned with rings and a gold watch. |
 | gallery-4.jpg | https://www.pexels.com/photo/10182680/ | Close-up of a woman's manicured hand with jewelry on a white table. |
 | gallery-5.jpg | https://www.pexels.com/photo/4963838/ | Close-up of a woman's pedicured feet resting on a soft blanket, depicting relaxation and simplicity. |
 | gallery-6.jpg | https://www.pexels.com/photo/9697759/ | Close-up of a stylish hand with dazzling manicured nails on mesh fabric, adorned with sparkles. |
