@@ -1,5 +1,14 @@
 // YORK NAILS — mobile menu, services carousel, today's hours, footer year. No dependencies.
 (function () {
+  // ?preview shows sections that are waiting for real content (data-pending).
+  if (/[?&]preview(=|&|$)/.test(location.search) && document.querySelector('[data-pending]')) {
+    document.documentElement.classList.add('is-preview');
+    var note = document.createElement('p');
+    note.className = 'preview-banner';
+    note.textContent = 'Preview — dashed sections are hidden on the live site until real content is added.';
+    document.body.appendChild(note);
+  }
+
   var toggle = document.querySelector('[data-menu-toggle]');
   var menu = document.getElementById('menu');
   var desktop = window.matchMedia('(min-width: 64em)');

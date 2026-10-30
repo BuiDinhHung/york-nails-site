@@ -284,6 +284,48 @@ body.menu-open { overflow: hidden; }
 .section-bar__link { display: none; white-space: nowrap; }
 .section-bar--center { justify-content: center; text-align: center; }
 
+/* ---------- Sections awaiting real content ---------- */
+/* Hidden on the live site; visible with ?preview so the design can be reviewed. */
+[data-pending] { display: none !important; }
+.is-preview [data-pending] { display: block !important; outline: 2px dashed var(--gold-deep); outline-offset: -2px; }
+.preview-banner {
+  position: fixed; left: 50%; bottom: 1rem; z-index: 90; transform: translateX(-50%);
+  padding: .6rem 1rem; background: var(--charcoal); color: var(--ivory);
+  font-size: .875rem; box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+
+/* ---------- As seen in ---------- */
+
+.press { padding: clamp(2.5rem, 6vw, 3.5rem) 0; text-align: center; }
+.press__title { font-family: var(--serif); font-size: clamp(1.625rem, 4vw, 2rem); margin-bottom: 1.5rem; }
+.press__list {
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+  gap: 1.25rem 2.75rem;
+}
+.press__item {
+  font-family: var(--serif); font-size: 1.5rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.press__item img { height: 1.75rem; width: auto; filter: grayscale(1); opacity: .75; }
+
+/* ---------- Loved by our clients ---------- */
+
+.reviews { background: var(--cream); }
+.reviews__head { text-align: center; margin-bottom: 2rem; }
+.reviews__summary { margin: .6rem 0 0; color: var(--ink-soft); }
+.reviews__summary span, .review__stars { color: var(--gold-deep); letter-spacing: .15em; }
+.reviews__grid { display: grid; gap: 1rem; }
+.review {
+  display: flex; flex-direction: column;
+  padding: 1.5rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+.review__stars { margin: 0 0 .75rem; font-size: 1rem; }
+.review__text { margin: 0 0 1rem; flex: 1; }
+.review__text p { margin: 0; }
+.review__name { margin: 0; font-weight: 500; }
+
 /* ---------- Services carousel ---------- */
 
 .carousel { position: relative; }
@@ -494,6 +536,7 @@ body.menu-open { overflow: hidden; }
   .carousel__btn { top: calc((33.333vw - var(--gutter)) * 1.25 / 2); }
 
   .gallery__grid { grid-template-columns: repeat(3, 1fr); gap: .75rem; }
+  .reviews__grid { grid-template-columns: repeat(2, 1fr); }
 
   .feature__grid, .about__grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
   .visit__grid { grid-template-columns: 1fr 1fr; gap: 3rem; align-items: stretch; }
@@ -530,6 +573,7 @@ body.menu-open { overflow: hidden; }
   .about__media { max-width: 34rem; justify-self: center; width: 100%; }
 
   .gallery__grid { grid-template-columns: repeat(6, 1fr); }
+  .reviews__grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 
   .prices { display: grid; grid-template-columns: 18rem 1fr; gap: 4rem; align-items: start; }
   .prices__head { position: sticky; top: 7rem; }
