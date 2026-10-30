@@ -330,6 +330,8 @@ body.menu-open { overflow: hidden; }
 .review__text { margin: 0 0 1rem; flex: 1; }
 .review__text p { margin: 0; }
 .review__name { margin: 0; font-weight: 500; }
+.review--sample { position: relative; }
+.review--sample .sample-tag { position: absolute; top: 1rem; right: 1rem; margin: 0; }
 
 /* ---------- Services carousel ---------- */
 

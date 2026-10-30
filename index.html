@@ -138,19 +138,19 @@
       </div>
     </section>
 
-    <!-- AS SEEN IN — hidden (data-pending) until the salon supplies real press
-         coverage. Replace each placeholder with the publication's name or logo
-         (<img src="assets/press/name.svg" alt="Publication name">), then remove
-         data-pending from the <section>. Preview: add ?preview to the URL. -->
-    <section class="press" aria-labelledby="press-title" data-pending>
+    <!-- SPECIALISTS IN — press-style strip listing the salon's real treatments.
+         If the salon gains genuine press coverage, this can become "As seen in"
+         with the publications' names or logos. -->
+    <section class="press" aria-labelledby="press-title">
       <div class="container">
-        <h2 class="press__title" id="press-title">As seen in</h2>
+        <h2 class="press__title" id="press-title">Specialists in</h2>
         <ul class="press__list" role="list">
-          <li class="press__item">Publication</li>
-          <li class="press__item">Publication</li>
-          <li class="press__item">Publication</li>
-          <li class="press__item">Publication</li>
-          <li class="press__item">Publication</li>
+          <li class="press__item">BIAB</li>
+          <li class="press__item">Shellac</li>
+          <li class="press__item">Acrylic</li>
+          <li class="press__item">Gel Powder</li>
+          <li class="press__item">SNS</li>
+          <li class="press__item">Nail Art</li>
         </ul>
       </div>
     </section>
@@ -243,45 +243,53 @@
 
     <!-- LOVED BY OUR CLIENTS — hidden (data-pending) until real reviews are
          supplied (e.g. from Google or Fresha, with the client's first name and
-         initial). Edit each .review card, set the stars to the real rating, fill
-         in the summary line, then remove data-pending from the <section>.
+         initial). The cards below are SAMPLE text for design review only — never
+         publish them. Replace each with a real review, remove the review--sample
+         class and .sample-tag, set the real stars and summary line, then remove
+         data-pending from the <section>.
          Preview: add ?preview to the URL. -->
     <section class="section reviews" aria-labelledby="reviews-title" data-pending>
       <div class="container">
         <div class="reviews__head">
           <h2 class="h2" id="reviews-title">Loved by our clients</h2>
-          <p class="reviews__summary"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> Rating &middot; number of reviews</p>
+          <p class="reviews__summary"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> Sample &mdash; real rating and review count go here</p>
         </div>
         <ul class="reviews__grid" role="list">
-          <li class="review">
+          <li class="review review--sample">
+            <span class="sample-tag">Sample</span>
             <p class="review__stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="visually-hidden">5 out of 5 stars</span></p>
-            <blockquote class="review__text"><p>Real client review to be added here.</p></blockquote>
-            <p class="review__name">Client name</p>
+            <blockquote class="review__text"><p>My BIAB still looked perfect three weeks later. Lovely, careful work.</p></blockquote>
+            <p class="review__name">Sample review</p>
           </li>
-          <li class="review">
+          <li class="review review--sample">
+            <span class="sample-tag">Sample</span>
             <p class="review__stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="visually-hidden">5 out of 5 stars</span></p>
-            <blockquote class="review__text"><p>Real client review to be added here.</p></blockquote>
-            <p class="review__name">Client name</p>
+            <blockquote class="review__text"><p>Booked a Shellac manicure online in minutes and was seen right on time.</p></blockquote>
+            <p class="review__name">Sample review</p>
           </li>
-          <li class="review">
+          <li class="review review--sample">
+            <span class="sample-tag">Sample</span>
             <p class="review__stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="visually-hidden">5 out of 5 stars</span></p>
-            <blockquote class="review__text"><p>Real client review to be added here.</p></blockquote>
-            <p class="review__name">Client name</p>
+            <blockquote class="review__text"><p>A relaxing pedicure and such a friendly welcome. I&rsquo;ll definitely be back.</p></blockquote>
+            <p class="review__name">Sample review</p>
           </li>
-          <li class="review">
+          <li class="review review--sample">
+            <span class="sample-tag">Sample</span>
             <p class="review__stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="visually-hidden">5 out of 5 stars</span></p>
-            <blockquote class="review__text"><p>Real client review to be added here.</p></blockquote>
-            <p class="review__name">Client name</p>
+            <blockquote class="review__text"><p>Beautiful ombr&eacute; full set &mdash; exactly the shape and length I asked for.</p></blockquote>
+            <p class="review__name">Sample review</p>
           </li>
-          <li class="review">
+          <li class="review review--sample">
+            <span class="sample-tag">Sample</span>
             <p class="review__stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="visually-hidden">5 out of 5 stars</span></p>
-            <blockquote class="review__text"><p>Real client review to be added here.</p></blockquote>
-            <p class="review__name">Client name</p>
+            <blockquote class="review__text"><p>Calm, spotless salon right on the High Street, and the nail art was so neat.</p></blockquote>
+            <p class="review__name">Sample review</p>
           </li>
-          <li class="review">
+          <li class="review review--sample">
+            <span class="sample-tag">Sample</span>
             <p class="review__stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="visually-hidden">5 out of 5 stars</span></p>
-            <blockquote class="review__text"><p>Real client review to be added here.</p></blockquote>
-            <p class="review__name">Client name</p>
+            <blockquote class="review__text"><p>Popped in for an infill at lunch and they still took their time on the finish.</p></blockquote>
+            <p class="review__name">Sample review</p>
           </li>
         </ul>
       </div>
