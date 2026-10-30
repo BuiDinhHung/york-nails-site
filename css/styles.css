@@ -5,9 +5,11 @@
 :root {
   --charcoal: #111111;
   --charcoal-2: #1a1917;
-  --cream: #f5f0e8;
-  --cream-2: #ece4d7;
-  --paper: #fcfaf6;
+  --cream: #ebe3d5;         /* alternate section background */
+  --cream-2: #e2d8c7;
+  --paper: #f5f0e8;         /* main cream / ivory background */
+  --ivory: #f5f0e8;
+  --gold-hair: rgba(195, 166, 106, .55);
   --gold: #c3a66a;
   --gold-soft: #e9dcc0;      /* light champagne for button backgrounds */
   --gold-deep: #7a5f2c;      /* gold for small text on cream (AA contrast) */
@@ -55,7 +57,7 @@ ul[role="list"] { list-style: none; margin: 0; padding: 0; }
 }
 .skip-link {
   position: absolute; left: 1rem; top: -4rem; z-index: 100;
-  background: var(--charcoal); color: var(--cream);
+  background: var(--charcoal); color: var(--ivory);
   padding: .75rem 1rem; text-decoration: none;
 }
 .skip-link:focus { top: .5rem; }
@@ -106,10 +108,10 @@ ul[role="list"] { list-style: none; margin: 0; padding: 0; }
 }
 .btn--gold { background: var(--gold); border-color: var(--gold-line); color: var(--charcoal); }
 .btn--gold:hover { background: #d1b77e; }
-.btn--dark { background: var(--charcoal); color: var(--cream); }
+.btn--dark { background: var(--charcoal); color: var(--ivory); }
 .btn--dark:hover { background: #33302c; }
 .btn--outline { border-color: var(--charcoal); color: var(--charcoal); background: transparent; }
-.btn--outline:hover { background: var(--charcoal); color: var(--cream); }
+.btn--outline:hover { background: var(--charcoal); color: var(--ivory); }
 
 /* Pill button with round icon (hero) */
 .pill {
@@ -119,7 +121,7 @@ ul[role="list"] { list-style: none; margin: 0; padding: 0; }
   background: rgba(17, 17, 17, .7);
   border: 1px solid rgba(245, 240, 232, .25);
   backdrop-filter: blur(6px);
-  color: var(--cream);
+  color: var(--ivory);
   font-size: .875rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
   text-decoration: none;
   transition: background-color .25s var(--ease);
@@ -128,7 +130,7 @@ ul[role="list"] { list-style: none; margin: 0; padding: 0; }
 .pill__icon {
   width: 2rem; height: 2rem; border-radius: 50%;
   display: grid; place-items: center;
-  background: var(--cream); color: var(--charcoal);
+  background: var(--ivory); color: var(--charcoal);
 }
 .pill__icon svg { width: 1rem; height: 1rem; fill: none; stroke: currentColor; stroke-width: 1.8; }
 
@@ -144,7 +146,8 @@ ul[role="list"] { list-style: none; margin: 0; padding: 0; }
 
 /* ---------- Top bar ---------- */
 
-.topbar { background: var(--cream); font-size: .875rem; color: var(--ink); }
+.topbar { background: var(--charcoal); font-size: .875rem; color: var(--ivory); }
+.topbar .icon { color: var(--gold); }
 .topbar__inner {
   max-width: var(--max); margin-inline: auto;
   padding: 0 var(--gutter);
@@ -153,7 +156,7 @@ ul[role="list"] { list-style: none; margin: 0; padding: 0; }
 }
 .topbar__right { display: flex; align-items: center; gap: 1.5rem; }
 .topbar__item { display: inline-flex; align-items: center; gap: .4rem; text-decoration: none; padding-block: .4rem; }
-a.topbar__item:hover { color: var(--ink); }
+a.topbar__item:hover { color: var(--gold); }
 .topbar__today, .topbar__right a { display: none; }
 
 /* ---------- Header ---------- */
@@ -161,7 +164,7 @@ a.topbar__item:hover { color: var(--ink); }
 .header {
   position: sticky; top: 0; z-index: 50;
   background: var(--paper);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--gold-hair);
 }
 .header__inner {
   max-width: var(--max); margin-inline: auto;
@@ -249,19 +252,25 @@ body.menu-open { overflow: hidden; }
 }
 .hero__frame::after {
   content: ""; position: absolute; inset: 0; z-index: -1;
-  background: radial-gradient(ellipse 60% 55% at 50% 50%, rgba(17,17,17,.62) 0%, rgba(17,17,17,.35) 100%);
+  background: radial-gradient(ellipse 65% 60% at 50% 50%, rgba(17,17,17,.78) 0%, rgba(17,17,17,.55) 100%);
 }
-.hero__content { text-align: center; color: var(--cream); padding: 2rem var(--gutter); }
-.hero__kicker {
-  font-size: .875rem; letter-spacing: .24em; text-transform: uppercase;
-  color: var(--gold-soft);
-  margin-bottom: 1rem;
+/* Neoclassical double frame */
+.hero__frame::before {
+  content: ""; position: absolute; inset: 14px; z-index: 1; pointer-events: none;
+  border: 1px solid var(--gold-hair);
+  outline: 1px solid rgba(195, 166, 106, .3); outline-offset: -7px;
+}
+.hero__content { text-align: center; color: var(--ivory); padding: 2rem var(--gutter); }
+.hero__logo { width: min(17rem, 68vw); margin: 0 auto; }
+.rule {
+  display: block; width: 4.5rem; height: 1px; margin: 1.5rem auto 1.75rem;
+  background: var(--gold);
 }
 .hero__title {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(2.75rem, 11vw, 5.75rem);
-  line-height: .98;
+  font-size: clamp(2.25rem, 8vw, 4.25rem);
+  line-height: 1.02;
   letter-spacing: -.01em;
   margin-bottom: 2rem;
   text-shadow: 0 2px 24px rgba(0, 0, 0, .25);
@@ -270,7 +279,7 @@ body.menu-open { overflow: hidden; }
 /* ---------- Sections ---------- */
 
 .section { padding-block: clamp(3.5rem, 8vw, 6rem); }
-.section + .section { border-top: 1px solid var(--line); }
+.section + .section { border-top: 1px solid var(--gold-hair); }
 
 .section-bar {
   display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem;
@@ -329,7 +338,7 @@ body.menu-open { overflow: hidden; }
 
 .prices { margin-top: clamp(3rem, 7vw, 5rem); scroll-margin-top: 8.5rem; }
 .prices__head { margin-bottom: 1.5rem; }
-.prices__list { border-top: 1px solid var(--line); }
+.prices__list { border-top: 1px solid var(--gold-hair); counter-reset: cat; }
 .menu-cat { border-bottom: 1px solid var(--line); scroll-margin-top: 8.5rem; }
 .menu-cat summary {
   display: flex; align-items: baseline; gap: 1rem;
@@ -343,6 +352,11 @@ body.menu-open { overflow: hidden; }
   transition: transform .25s var(--ease);
 }
 .menu-cat[open] summary::after { transform: rotate(45deg); }
+.menu-cat__title::before {
+  counter-increment: cat; content: counter(cat, upper-roman) ".";
+  display: inline-block; min-width: 2.75rem;
+  color: var(--gold-deep); font-size: 1.125rem; letter-spacing: .04em;
+}
 .menu-cat__title { font-family: var(--serif); font-size: 1.625rem; font-weight: 500; line-height: 1.2; flex: 1; }
 .menu-cat__from { font-size: .9375rem; color: var(--ink-soft); white-space: nowrap; }
 .menu-cat__intro { margin: -.25rem 0 .75rem; font-size: 1rem; color: var(--ink-soft); }
@@ -361,8 +375,21 @@ body.menu-open { overflow: hidden; }
 /* ---------- Feature (split) ---------- */
 
 .feature { background: var(--paper); }
+.feature--dark { background: var(--charcoal); color: var(--ivory); border-top: 0 !important; }
+.feature--dark + .section { border-top: 0; }
+.feature--dark .eyebrow { color: var(--gold); }
+.feature--dark .feature__lede { color: rgba(245, 240, 232, .85); }
+.feature--dark .points li { border-left-color: rgba(195, 166, 106, .4); }
+.feature--dark .points li:first-child { border-left-color: var(--gold); }
+.feature--dark .points p { color: rgba(245, 240, 232, .8); }
+.feature--dark :focus-visible { outline-color: var(--gold); }
 .feature__grid { display: grid; gap: 2.5rem; align-items: center; }
-.feature__media { box-shadow: 0 30px 60px -40px rgba(17, 17, 17, .5); }
+/* Photos framed with a fine ivory hairline, neoclassical style */
+.feature__media, .about__media { position: relative; }
+.feature__media::after, .about__media::after {
+  content: ""; position: absolute; inset: 14px; pointer-events: none;
+  border: 1px solid rgba(245, 240, 232, .75);
+}
 .feature__media img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
 .feature__lede { color: var(--ink-soft); margin: 1.25rem 0 2rem; max-width: 32rem; font-size: 1.0625rem; }
 
@@ -371,6 +398,19 @@ body.menu-open { overflow: hidden; }
 .points li:first-child { border-left: 2px solid var(--charcoal); }
 .points h3 { font-family: var(--serif); font-size: 1.5rem; font-weight: 500; line-height: 1.25; }
 .points p { margin: .2rem 0 0; font-size: .9375rem; color: var(--ink-soft); }
+
+/* ---------- Ornament: gold rule with YN monogram ---------- */
+
+.ornament {
+  display: flex; align-items: center; justify-content: center; gap: 1rem;
+  margin: 0 auto 1.25rem;
+}
+.ornament::before, .ornament::after {
+  content: ""; width: 3.5rem; height: 1px; background: var(--gold);
+}
+.ornament img { width: 2.25rem; height: 2.25rem; }
+.ornament--left { justify-content: flex-start; }
+.ornament--left::before { display: none; }
 
 /* ---------- Gallery ---------- */
 
