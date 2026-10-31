@@ -328,6 +328,74 @@ body.menu-open { overflow: hidden; }
 }
 .press__item img { height: 1.75rem; width: auto; filter: grayscale(1); opacity: .75; }
 
+/* ---------- Gift cards ---------- */
+
+.gift { background: var(--charcoal); color: var(--ivory); overflow-x: clip; }
+.gift__grid { display: grid; gap: 2.5rem; align-items: center; }
+.gift__media { display: flex; justify-content: center; }
+.gift__stack {
+  position: relative; width: min(80%, 25rem); aspect-ratio: 1.586; margin: 2.5rem auto 1.5rem;
+  container-type: inline-size;
+}
+.gift__stack::before {   /* soft champagne glow behind the cards */
+  content: ""; position: absolute; inset: -25%; z-index: -1;
+  background: radial-gradient(closest-side, rgba(195, 166, 106, .32), transparent);
+}
+.gift-card {
+  position: absolute; inset: 0; overflow: hidden; border-radius: 4.5cqi;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .3), 0 30px 60px -20px rgba(0, 0, 0, .85);
+  transition: transform .6s var(--ease);
+}
+.gift-card::after {      /* fine double frame */
+  content: ""; position: absolute; inset: 3.2cqi; border-radius: 2cqi; pointer-events: none;
+  border: 3px double currentColor; opacity: .45;
+}
+.gift-card--back {
+  color: var(--gold);
+  background: radial-gradient(120% 90% at 20% 0%, #34302a, #0b0a09 70%);
+  transform: translate(9%, -13%) rotate(9deg);
+}
+.gift-card--back .gift-card__mono { position: absolute; right: 8cqi; bottom: 8cqi; width: 13cqi; height: auto; opacity: .9; }
+.gift-card--front {
+  display: grid; grid-template-rows: auto 1fr auto; padding: 7cqi 8cqi;
+  color: #2c2214;
+  background:
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, .07) 0 1px, transparent 1px 7px),
+    radial-gradient(140% 100% at 85% 110%, rgba(122, 95, 44, .45), transparent 60%),
+    linear-gradient(120deg, #b38f52 0%, #ead9ab 24%, #c7aa6c 42%, #f6ebcb 56%, #bd9b5c 74%, #e2cb96 100%);
+  transform: rotate(-5deg);
+}
+.gift__media:hover .gift-card--front { transform: rotate(-3deg) translateY(-2%); }
+.gift__media:hover .gift-card--back { transform: translate(11%, -16%) rotate(11deg); }
+.gift-card__label, .gift-card__foot {
+  font-size: 3.1cqi; font-weight: 500; letter-spacing: .32em; text-transform: uppercase;
+}
+.gift-card__centre { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.5cqi; }
+.gift-card--front .gift-card__mono { width: 17cqi; height: auto; filter: brightness(.3) saturate(1.3); }
+.gift-card__brand { font-family: var(--serif); font-size: 7cqi; font-weight: 500; letter-spacing: .3em; padding-left: .3em; line-height: 1; }
+.gift-card__foot { display: flex; justify-content: space-between; font-size: 2.6cqi; opacity: .75; }
+.gift-card__sheen {      /* light sweeping across the foil */
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, .55) 50%, transparent 65%) no-repeat;
+  background-size: 250% 100%; background-position: 150% 0;
+  animation: sheen 7s var(--ease) infinite 1s;
+}
+@keyframes sheen { 0%, 70% { background-position: 150% 0; } 100% { background-position: -150% 0; } }
+.gift .eyebrow { color: var(--gold); }
+.gift__lede { color: rgba(245, 240, 232, .85); margin: 1.25rem 0 2rem; max-width: 32rem; font-size: 1.0625rem; }
+.gift__actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.gift .btn--outline { border-color: rgba(245, 240, 232, .7); color: var(--ivory); }
+.gift .btn--outline:hover { background: var(--ivory); color: var(--charcoal); }
+
+/* ---------- Products page ---------- */
+/* Grid is empty for now; see the template comment in products.html. */
+
+.products__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1rem; }
+.product__media { aspect-ratio: 1; overflow: hidden; background: var(--cream-2); }
+.product__media img { width: 100%; height: 100%; object-fit: cover; }
+.product__name { margin: .85rem 0 0; font-size: 1.0625rem; font-weight: 500; }
+.product__price { margin: .1rem 0 0; font-size: .9375rem; color: var(--ink-soft); }
+
 /* ---------- Loved by our clients ---------- */
 
 .reviews { background: var(--cream); }
@@ -562,7 +630,8 @@ body.menu-open { overflow: hidden; }
   .gallery__grid { grid-template-columns: repeat(3, 1fr); gap: .75rem; }
   .reviews__grid { grid-template-columns: repeat(2, 1fr); }
 
-  .feature__grid, .about__grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .feature__grid, .about__grid, .gift__grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .products__grid { grid-template-columns: repeat(3, 1fr); gap: 2rem 1.25rem; }
   .visit__grid { grid-template-columns: 1fr 1fr; gap: 3rem; align-items: stretch; }
 
   .footer__grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; }
@@ -575,7 +644,7 @@ body.menu-open { overflow: hidden; }
   .menu-toggle, .menu { display: none !important; }
 
   .nav { display: block; justify-self: center; }
-  .nav__list { display: flex; gap: 2.5rem; }
+  .nav__list { display: flex; gap: 1.75rem; }
   .nav__list a {
     display: block; padding: .5rem 0;
     font-size: .875rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
@@ -594,6 +663,8 @@ body.menu-open { overflow: hidden; }
   .feature__grid { grid-template-columns: 1fr 1fr; gap: 6rem; }
   .feature__media { max-width: 34rem; justify-self: center; width: 100%; }
   .about__grid { grid-template-columns: 1fr 1fr; gap: 6rem; }
+  .gift__grid { gap: 6rem; }
+  .products__grid { grid-template-columns: repeat(4, 1fr); }
   .about__media { max-width: 34rem; justify-self: center; width: 100%; }
 
   .gallery__grid { grid-template-columns: repeat(6, 1fr); }
@@ -612,6 +683,7 @@ body.menu-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .marquee { -webkit-mask-image: none; mask-image: none; }
   .marquee__track { animation: none; width: auto; justify-content: center; }
+  .gift-card__sheen { animation: none; display: none; }
   .marquee__track .press__list { flex: 1 1 100%; flex-wrap: wrap; justify-content: center; row-gap: .75rem; padding-inline: var(--gutter); }
   .marquee__track .press__item:last-child::after { display: none; }
   .marquee__track .press__list[aria-hidden] { display: none; }
