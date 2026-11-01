@@ -5,7 +5,7 @@ https://www.pexels.com/license/ — replace with the salon's own photos when ava
 
 | File | Source | Description |
 |---|---|---|
-| hero.jpg | https://www.pexels.com/photo/7446914/ | Close-up of a professional manicure session with tools and black gloves in a modern salon. |
+| hero.jpg | Salon's own photo (resized from `ảnh đầu trang.jpg`) | Interior of YORK NAILS, Banstead. |
 | service-manicure-pedicure.jpg | https://www.pexels.com/photo/4677845/ | Close-up of a manicurist applying nail polish during a professional manicure session. |
 | service-biab-shellac.jpg | https://www.pexels.com/photo/3997382/ | Close-up of a professional manicure session using gel polish with red nails. |
 | service-extensions.jpg | https://www.pexels.com/photo/34997574/ | Close-up of a hand with French manicure and gold rings on blue background. |
