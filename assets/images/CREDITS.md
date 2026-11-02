@@ -5,7 +5,8 @@ https://www.pexels.com/license/ — replace with the salon's own photos when ava
 
 | File | Source | Description |
 |---|---|---|
-| hero.jpg | Salon's own photo (resized from `ảnh đầu trang.jpg`) | Interior of YORK NAILS, Banstead. |
+| hero-premium.png / hero-premium.webp / hero-premium-mobile.webp | AI-retouched from the salon's own hero.jpg using built-in ImageGen | Warm architectural treatment, restored detail, corrected perspective, TV screen darkened. AI may reconstruct small details. Original hero.jpg retained. See hero-premium-prompt.md. |
+| hero.jpg | Salon's own photo (full-size re-export of `ảnh đầu trang.jpg`, lightly sharpened) | Interior of YORK NAILS, Banstead. |
 | service-manicure-pedicure.jpg | https://www.pexels.com/photo/4677845/ | Close-up of a manicurist applying nail polish during a professional manicure session. |
 | service-biab-shellac.jpg | https://www.pexels.com/photo/3997382/ | Close-up of a professional manicure session using gel polish with red nails. |
 | service-extensions.jpg | https://www.pexels.com/photo/34997574/ | Close-up of a hand with French manicure and gold rings on blue background. |

@@ -75,6 +75,19 @@
   var firstCat = document.querySelector('.menu-cat');
   if (firstCat && window.matchMedia('(min-width: 48em)').matches) firstCat.open = true;
 
+  // ----- Call links inside an embed (e.g. a Webcake iframe) -----
+  // Browsers block tel: links that navigate inside an iframe, so hand the
+  // call to the top window, or a new window if the embed doesn't allow that.
+  if (window.self !== window.top) {
+    document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        try { window.top.location.href = link.href; }
+        catch (err) { window.open(link.href, '_blank'); }
+      });
+    });
+  }
+
   // ----- Today's opening hours (UK time) -----
   // Mon–Sat 9am–7pm, Sun 10am–5pm
   var today = document.querySelector('[data-today]');
