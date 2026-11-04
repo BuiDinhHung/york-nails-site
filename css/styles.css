@@ -238,31 +238,32 @@ body.menu-open { overflow: hidden; }
 .hero__frame {
   position: relative;
   isolation: isolate;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
-  min-height: 30rem;
-  height: 72svh;
-  max-height: 46rem;
-  display: grid; place-items: end center;
-  background: var(--charcoal);
+  display: grid; place-items: center;
 }
 .hero__img {
   position: absolute; inset: 0; z-index: -2;
-  width: 100%; height: 100%; object-fit: cover; object-position: 48% center;
-}
-/* Photo stays clear; only a soft fade along the bottom, behind the title */
-.hero__frame::after {
-  content: ""; position: absolute; inset: 0; z-index: -1;
-  background: linear-gradient(to bottom, transparent 30%, rgba(32,24,18,.12) 48%, rgba(32,24,18,.64) 76%, rgba(32,24,18,.82) 100%);
+  width: 100%; height: 100%; object-fit: cover; object-position: center 48%;
 }
 .hero__eyebrow {
-  margin-bottom: 1rem;
-  font-size: .6875rem; font-weight: 500; letter-spacing: .28em;
-  color: var(--gold-soft);
+  display: table;
+  margin: 0 auto 1rem;
+  padding: .3rem .75rem;
+  border: 1px solid var(--gold-line);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: .875rem; font-weight: 700; letter-spacing: .12em;
+  text-shadow: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
 }
 .hero__eyebrow span { margin-inline: .6rem; }
 .hero__content {
-  text-align: center; color: var(--ivory);
-  padding: 2rem var(--gutter) clamp(2.5rem, 5vw, 4rem);
+  max-width: calc(100% - 2rem);
+  margin-bottom: 0;
+  padding: 1rem clamp(1rem, 3vw, 2rem);
+  text-align: center; color: #171512;
+  text-shadow: 0 2px 3px rgba(0,0,0,.62), 0 0 7px rgba(245,240,232,.95);
   animation: hero-arrive .9s var(--ease) both;
 }
 .hero .pill {
@@ -279,12 +280,14 @@ body.menu-open { overflow: hidden; }
 }
 .hero__title {
   font-family: var(--serif);
-  font-weight: 400;
+  font-weight: 600;
   font-size: clamp(2.25rem, 8vw, 4.25rem);
   line-height: 1.02;
   letter-spacing: -.01em;
-  margin-bottom: 2rem;
-  text-shadow: 0 2px 16px rgba(32, 24, 18, .2);
+  margin-bottom: 1.25rem;
+  -webkit-text-stroke: .45px rgba(245,240,232,.9);
+  paint-order: stroke fill;
+  text-shadow: 0 2px 3px rgba(0,0,0,.7), 0 0 8px rgba(245,240,232,.95);
 }
 
 /* ---------- Sections ---------- */
@@ -639,7 +642,6 @@ body.menu-open { overflow: hidden; }
   .header__bookbar { display: none; }
   .brand__word { width: 9.5rem; }
 
-  .hero__frame { height: 78svh; max-height: 50rem; }
 
   .section-bar__link { display: inline-flex; }
   .services__all { display: none; }
@@ -660,6 +662,8 @@ body.menu-open { overflow: hidden; }
 
 @media (min-width: 64em) {
   :root { --gutter: 2rem; }
+  .hero__frame { aspect-ratio: 16 / 9; }
+  .hero__content { margin-bottom: 0; }
   .menu-toggle, .menu { display: none !important; }
 
   .nav { display: block; justify-self: center; }
@@ -695,6 +699,13 @@ body.menu-open { overflow: hidden; }
   .menu-items li { grid-template-columns: 1fr 6rem 7rem; }
   .menu-items__time { grid-column: 2; grid-row: 1; align-self: center; }
   .menu-items__price { grid-column: 3; grid-row: 1; }
+}
+
+@media (max-width: 47.99em) {
+  .hero__frame { height: calc(100svh - 9.5rem); min-height: 0; aspect-ratio: auto; }
+  .hero__content { padding: .5rem .25rem; }
+  .hero__eyebrow { margin-bottom: .5rem; font-size: .8125rem; }
+  .hero__title { font-size: clamp(1.75rem, 8vw, 3rem); margin-bottom: .75rem; }
 }
 
 /* ---------- Reduced motion ---------- */
