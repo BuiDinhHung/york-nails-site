@@ -234,16 +234,16 @@ body.menu-open { overflow: hidden; }
 
 /* ---------- Hero ---------- */
 
-.hero { padding: 0; }
+.hero { padding: 0 var(--gutter); }
 .hero__frame {
   position: relative;
   isolation: isolate;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 7 / 10;
   overflow: hidden;
-  display: grid; place-items: center;
+  background: var(--paper);
 }
 .hero__img {
-  position: absolute; inset: 0; z-index: -2;
+  display: block;
   width: 100%; height: 100%; object-fit: cover; object-position: center 48%;
 }
 .hero__eyebrow {
@@ -663,7 +663,6 @@ body.menu-open { overflow: hidden; }
 @media (min-width: 64em) {
   :root { --gutter: 2rem; }
   .hero__frame { aspect-ratio: 16 / 9; }
-  .hero__content { margin-bottom: 0; }
   .menu-toggle, .menu { display: none !important; }
 
   .nav { display: block; justify-self: center; }
@@ -702,10 +701,7 @@ body.menu-open { overflow: hidden; }
 }
 
 @media (max-width: 47.99em) {
-  .hero__frame { height: calc(100svh - 9.5rem); min-height: 0; aspect-ratio: auto; }
-  .hero__content { padding: .5rem .25rem; }
-  .hero__eyebrow { margin-bottom: .5rem; font-size: .8125rem; }
-  .hero__title { font-size: clamp(1.75rem, 8vw, 3rem); margin-bottom: .75rem; }
+  .hero__frame { aspect-ratio: 7 / 10; }
 }
 
 /* ---------- Reduced motion ---------- */
